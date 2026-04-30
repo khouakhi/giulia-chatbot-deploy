@@ -1,0 +1,13 @@
+# Local smoke test of the deploy image against MongoDB Atlas.
+# Usage: copy .env.example to .env, fill secrets, then:
+#   docker compose up --build
+
+services:
+  giulia:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      PORT: "8000"
