@@ -1,15 +1,15 @@
 # Container image for Giulia (Chainlit) against MongoDB Atlas + Mistral.
-# Upstream application code is cloned at build time so Giulia-Chatbot-v1 stays clean.
+# Upstream application code is cloned at build time (see GIULIA_REPO).
 #
 # Build:
 #   docker build -t giulia-deploy .
 #
 # Build from a fork or pin:
-#   docker build --build-arg GIULIA_REPO=https://github.com/you/Giulia-Chatbot-v1.git --build-arg GIULIA_REF=main -t giulia-deploy .
+#   docker build --build-arg GIULIA_REPO=https://github.com/you/Giulia-Chatbot.git --build-arg GIULIA_REF=main -t giulia-deploy .
 
 FROM python:3.11-slim-bookworm
 
-ARG GIULIA_REPO=https://github.com/rendzina/Giulia-Chatbot-v1.git
+ARG GIULIA_REPO=https://github.com/rendzina/Giulia-Chatbot.git
 ARG GIULIA_REF=main
 
 RUN apt-get update \
